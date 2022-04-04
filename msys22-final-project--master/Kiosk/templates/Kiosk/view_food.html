@@ -1,0 +1,34 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Food Items</h1>
+<table class="table">
+    <thead>
+        {% include 'Kiosk/messages.html' %}
+        <br>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Date Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in foods %}
+        <tr>
+            <td> {{f.name}}</td>
+            <td> {{ f.description }} </td>
+            <td> {{ f.price }} </td>
+            <td> {{ f.created_at}} </td>
+            <td> <a href='{% url 'view_food_details' pk=f.pk %}' class='button-details'>Details</a></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan='5'><a class='button-add' href='{% url 'add_food' %}'>+ Add</a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+		<meta charset='UTF-8'>
+		<title>Foods</title>
+		<link rel='stylesheet' href='{% static '/css/styles.css' %}'>
+	</head>
+
+	<body>
+
+		<div class='main'>
+
+			<div class='side'>
+
+				<div class='logo'>
+					<img src='{% static 'images/logo.png' %}' height='45px'>
+					<h1>Grab<span style='color: #FCFF6F'>Grub</span></h1>
+				</div>
+
+				<div class='sidenav'>
+					<ul>
+						<li>
+							<a href='{% url 'view_order' %}'><img src='{% static 'images/shopping-cart.png' %}' height='20px'><span class='sidenav-text'>Orders</span></a>
+						</li>
+						<li>
+							<a href='{% url 'view_food' %}'><img src='{% static 'images/burger.png' %}' height='20px'><span class='sidenav-text'>Food Items</span></a>
+						</li>
+						<li>
+							<a href='{% url 'view_customer' %}'><img src='{% static 'images/customers.png' %}' height='20px'><span class='sidenav-text'>Customers</span></a>
+						</li>
+					</ul>
+				</div>
+
+
+
+			</div>
+
+			<div class='block-content'>
+				{% block content %}
+				{% endblock %}
+			</div>
+
+		</div>
+
+
+
+
+
+		<div>
+		</div>
+
+	</body>
+
+</html>

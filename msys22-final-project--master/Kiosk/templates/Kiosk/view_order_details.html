@@ -1,0 +1,34 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    {% include 'Kiosk/messages.html' %}
+    <h2>Order Details:</h2>
+</div>
+<div class='round-box'>
+    <form method="POST">
+        <div>
+            <label> Customer Name: </label><br>
+            <input value="{{i.cust_order.name}}" disabled>
+            <br><br>
+            <label> Food: </label><br>
+            <input value="{{i.food.name}}" disabled>
+            <br><br>
+            <label> Qty: </label><br>
+            <input value="{{i.qty}}" disabled>
+            <br><br>
+            <label> Mode of Payment: </label><br>
+            <input value="{{i.payment_mode}}" disabled>
+            <br><br>
+            <label> Date Ordered: </label><br>
+            <input value='{{ i.ordered_at }}' disabled>
+        </div>
+    </form>
+    <br><br>
+    <a href="{% url 'view_order' %}" class='button'>Back</a>
+    <a href="{% url 'update_order' pk=i.pk %}" class='button'>Update</a>
+    <a href='{% url 'delete_order' pk=i.pk %}' class='button'>Delete</a>
+</div>
+{% endblock %}

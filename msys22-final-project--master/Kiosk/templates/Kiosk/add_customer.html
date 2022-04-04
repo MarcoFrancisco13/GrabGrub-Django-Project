@@ -1,0 +1,20 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'Kiosk/messages.html' %}
+<h1> Type in Customer Details:</h1>
+<br>
+<div class='round-box'>
+	<form method="POST" action="{% url 'add_customer' %}">{% csrf_token %}
+		<label for="name"> Name: </label><br>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="address"> Address: </label><br>
+        <input type="text" id="address" name="address"><br><br>
+		<label for="city"> City: </label><br>
+		<input type="text" id="city" name="city"><br><br><br>
+		<a href='{% url 'view_customer' %}' class='button'>Back</a>
+		<button type="submit" class='button'>Add</button>
+	</form>
+</div>
+{% endblock %}

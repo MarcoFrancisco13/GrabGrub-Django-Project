@@ -1,0 +1,37 @@
+{% load static %}
+{% include 'Kiosk/messages.html' %}
+
+<html>
+	<head>
+		<title>Sign Up</title>
+		<link rel="stylesheet" href="{% static '/css/login_styles.css' %}">
+	</head>
+	<body>
+
+		<div class='logo'>
+			<img src='{% static 'images/logo.png' %}' height='45px'>
+			<h1>Grab<span style='color: #FCFF6F'>Grub</span></h1>
+		</div>
+
+		<div class='center'>
+			<br>
+			<h2>Sign Up</h2>
+
+			<div class ='box'>
+				<form method="POST" action="{% url 'signup' %}">{% csrf_token %}
+					<div>
+						<label for="username"> Username: </label><br>
+						<input type="text" id="uname" name="uname"><br><br>
+						<label for="password"> Password: </label><br>
+						<input type="text" id="pw" name="pw"><br><br>
+					</div>
+					<button type="submit" class='button'>Sign Up</button>
+				</form>
+				<a href="{% url 'login' %}" style="color:#125797"><b>Back to Log In</b></a>
+				<br>
+			</div>
+		</div>
+	</body>
+
+
+</html>

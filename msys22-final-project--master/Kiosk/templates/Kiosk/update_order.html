@@ -1,0 +1,26 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'Kiosk/messages.html' %}
+
+
+<h2> Type in Order Details:</h2>
+<div class='round-box'>
+    <form method='POST' action='{% url 'update_order' pk=i.pk %}'>{% csrf_token %}
+
+        <label for='qty'>Qty:</label><br>
+        <input type='text' id='qty' name='qty' value='{{ i.qty }}'><br><br>
+
+        <label for='payment_mode'>Mode of payment:</label><br>
+        <select name='payment_mode' id='payment_mode' value='Select'>
+            <option value='Cash'>Cash</option>
+            <option value='Card'>Card</option>
+        </select>
+        <br><br><br>
+        <a href="{% url 'view_order_details' pk=i.pk %}" class='button'>Back</a>
+        <button type="submit" class='button'>Save</button>
+    </form>
+</div>
+
+{% endblock %}

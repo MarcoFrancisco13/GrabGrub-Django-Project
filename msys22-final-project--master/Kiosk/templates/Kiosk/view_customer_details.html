@@ -1,0 +1,27 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'Kiosk/messages.html' %}
+<h1>Customer Details:</h1>
+<br>
+<div class='round-box'>
+    <form>
+        <div>
+            <label> Name: </label><br>
+            <input type="text" id="name" name="name" value="{{c.name}}" disabled>
+            <br><br>
+            <label> Address: </label><br>
+            <input type="text" id="address" name="address" value="{{c.address}}" disabled>
+            <br><br>
+            <label> City: </label><br>
+            <input type="text" id="price" name="price" value="{{c.city}}" disabled>
+            <br><br>
+        </div>
+    </form>
+    <br>
+    <a href="{% url 'view_customer' %}" class='button'>Back</a>
+    <a href='{% url 'update_customer_details' pk=c.pk %}' class='button'>Update</a>
+    <a href='{% url 'delete_customer' pk=c.pk %}' class='button'>Delete</a>
+</div>
+{% endblock %}

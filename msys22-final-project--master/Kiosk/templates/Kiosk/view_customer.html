@@ -1,0 +1,32 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Customers</h1>
+<table class="table">
+    <thead>
+        {% include 'Kiosk/messages.html' %}
+        <br>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in customers %}
+        <tr>
+            <td> {{ c.name }}</td>
+            <td> {{ c.address }} </td>
+            <td> {{ c.city }} </td>
+            <td><a href='{% url 'view_customer_details' pk=c.pk %}' class='button-details'>Details</a></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan='5'><a class='button-add' href='{% url 'add_customer' %}'>+ Add</a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+{% endblock %}

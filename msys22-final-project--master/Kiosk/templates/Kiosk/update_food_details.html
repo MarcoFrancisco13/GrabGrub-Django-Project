@@ -1,0 +1,30 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+<div>
+    {% include 'Kiosk/messages.html' %}
+    <h2> Type in Food Details:</h2>
+</div>
+<div class='round-box'>
+    <form method="POST" action='{% url 'update_food_details' pk=f.pk %}'>{% csrf_token %}
+        <div>
+            <label> Name: </label><br>
+            <input type="text" id="name" name="name" value="{{f.name}}">
+            <br><br>
+            <label> Description: </label><br>
+            <input type="text" id="description" name="description" value="{{f.description}}">
+            <br><br>
+            <label> Price: </label><br>
+            <input type="text" id="price" name="price" value="{{f.price}}">
+            <br><br>
+            <label> Date Created: </label><br>
+            <input type="datetime-local" id="created_at" name="created_at" value="{{f.created_at|date:'Y-m-d'}}T{{f.created_at|time:'H:i:s'}}">
+        </div>
+        <br>
+        <a href="{% url 'view_food_details' pk=f.pk %}" class='button'>Back</a>
+        <button type="submit" class='button'>Save</button>
+    </form>
+</div>
+
+{% endblock %}

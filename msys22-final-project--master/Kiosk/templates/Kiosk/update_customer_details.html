@@ -1,0 +1,26 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'Kiosk/messages.html' %}
+<h1> Update Customer Details:</h1>
+<br>
+<div class='round-box'>
+    <form method="POST" action='{% url 'update_customer_details' pk=c.pk %}'>{% csrf_token %}
+        <div>
+            <label> Name: </label><br>
+            <input type="text" id="name" name="name" value="{{c.name}}">
+            <br><br>
+            <label> Address: </label><br>
+            <input type="text" id="address" name="address" value="{{c.address}}">
+            <br><br>
+            <label> City: </label><br>
+            <input type="text" id="city" name="city" value="{{c.city}}">
+            <br><br>
+        </div>
+        <br>
+        <a href="{% url 'view_customer_details' pk=c.pk %}" class='button'>Back</a>
+        <button type="submit" class='button'>Save</button>
+    </form>
+</div>
+{% endblock %}

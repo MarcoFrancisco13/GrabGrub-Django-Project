@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.success {
+    background-color: green
+}
+
+.error {
+    background-color: red;
+}
+
+.success, .error {
+    position: absolute;
+    color: white;
+    top: 0px;
+    left: 256.72px;
+    width: calc(100% - 256.72px);
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main {
+    display: flex;
+}
+
+.side {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background-color:#292B3D;
+    color: white;
+}
+
+.logo > h1 {
+    margin: 5px 0px 0px 15px;
+}
+
+.sidenav {
+    color: white;
+    background-color:#202031;
+    padding-top: 20px;
+    padding-bottom: 10000px;
+}
+
+.sidenav > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.sidenav li {
+    padding: 0;
+}
+
+.sidenav li:hover {
+    background-color: #292B3D;
+}
+
+.sidenav a {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0px;
+    padding: 20px 30px 20px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.sidenav-text {
+    padding-left: 12px;
+}
+
+.block-content {
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+.block-content > h1 {
+    color: #292B3D;
+    margin: 0;
+}
+
+.table {
+    border: 1px solid #202031;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-spacing: 0;
+}
+
+.table th {
+    padding: 15px 25px 15px 25px;
+    color: #292B3D;
+}
+
+.table td {
+    padding: 15px 5px 15px 5px;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    text-align: center;
+}
+
+.table td:last-child {
+    border-right: none;
+}
+
+.table > tbody > tr:last-child > td {
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.table a {
+    height: 100%;
+    width: 100%;
+}
+
+.button {
+    padding: 8px 15px 8px 15px;
+    background-color: #292B3D;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.button-add {
+    padding: 3px 100px 3px 100px;
+}
+
+.button-details {
+    padding: 3px 15px 3px 15px;
+}
+
+.button-add, .button-details {
+    border-radius: 6px;
+    color: #292B3D;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #3E4164;
+}
+
+.button-add:hover, .button-details:hover {
+    background-color: lightgray;
+}
+
+input[type=submit]{
+    font-weight: bold;
+}
+
+.round-box {
+    border-radius: 12px;
+    border: 1px solid #4E4A57;
+
+    padding: 30px;
+}

@@ -1,0 +1,23 @@
+{% extends 'Kiosk/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'Kiosk/messages.html' %}
+
+<h1> Enter Food Details:</h1>
+<br>
+<div class='round-box'>
+	<form method="POST" action="{% url 'add_food' %}">{% csrf_token %}
+		<label for="name"> Name: </label><br>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="name"> Description: </label><br>
+        <input type="text" id="description" name="description"><br><br>
+		<label for="price"> Price: </label><br>
+		<input type="number" class="form-control w-50" id="price" name="price"><br><br>
+		<label for="name"> Created At: </label><br>
+        <input type="datetime-local" id="created_at" name="created_at"><br><br><br>
+		<a href='{% url 'view_food' %}' class='button'>Back</a>
+		<button type="submit" class='button'>Add</button>
+	</form>
+</div>
+{% endblock %}
